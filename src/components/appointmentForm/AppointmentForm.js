@@ -1,43 +1,28 @@
 import React from "react";
-import ContactPicker from "../contactPicker/ContactPicker";
+import { ContactPicker } from "../contactPicker/ContactPicker";
 
-export const AppointmentForm = ({
-  contacts,
-  title,
-  setTitle,
-  contact,
-  setContact,
-  date,
-  setDate,
-  time,
-  setTime,
-  handleSubmit
-}) => {
-
+export const AppointmentForm = () => {
   return (
-    <form onSubmit={handleSubmit}>
+    <form>
       <div>
         <label htmlFor="title">Title:</label>
-        <input type="text" id="title" value={title} onChange={(e)=>setTitle(e.target.value)} required/>
+        <input type="text" id="title" required />
       </div>
 
       <div>
         <label htmlFor="contact">Contact:</label>
         {/* render contactPicker with contact list */}
-        <ContactPicker 
-        contacts={contacts}
-        value={contact}
-        onChange={(selectedContact)=> setContact(selectedContact)}/>
+        <ContactPicker />
       </div>
 
       <div>
         <label htmlFor="date">Date:</label>
-        <input type="date" id="date" value={date} onChange={(e)=> setDate(e.target.value)} required />
+        <input type="date" id="date" required />
       </div>
 
       <div>
         <label htmlFor="time">Time:</label>
-        <input type="time" id="time" value={time} onChange={(e)=> setTime(e.target.value)} required />
+        <input type="time" id="time" required />
       </div>
 
       <button type="submit">Add Appointment</button>
