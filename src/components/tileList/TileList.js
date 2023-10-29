@@ -1,18 +1,28 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Tile from "../tile/Tile";
+import { useDispatch, useSelector } from "react-redux";
+import { getContacts } from "../../redux/contact/contact.actions";
 export const TileList = ({ data }) => {
+  const disptach = useDispatch();
+  const {
+    allcontacts: { contact },
+  } = useSelector((state) => state.contact);
+  useEffect(() => {
+    disptach(getContacts());
+  }, [disptach]);
+
+  console.log(contact, "alll");
   return (
-    <div>
+    <div className="flex gap-4">
       {/* mapping over the tile components objects */}
-      {Data.map(({ title, phoneNunber, email, time }, index) => {
+      {contact?.map(({ userName, phoneNumber, email }, index) => {
         return (
           <>
             <p key={index} className="title">
-              {title}
+              {userName}
             </p>
-            <p>{phoneNunber}</p>
+            <p>{phoneNumber}</p>
             <p>{email}</p>
-            <p>{time}</p>
           </>
         );
       })}
