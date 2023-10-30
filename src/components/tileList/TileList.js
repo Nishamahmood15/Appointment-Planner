@@ -13,45 +13,33 @@ export const TileList = ({ data }) => {
 
   console.log(contact, "alll");
   return (
-    <div className="flex gap-4">
-      {/* mapping over the tile components objects */}
+    <div
+      style={{
+        display: "grid",
+        gridTemplateColumns: "1fr 1fr 1fr 1fr",
+        rowGap: 40,
+      }}
+    >
       {contact?.map(({ userName, phoneNumber, email }, index) => {
         return (
-          <>
-            <p key={index} className="title">
-              {userName}
-            </p>
-            <p>{phoneNumber}</p>
-            <p>{email}</p>
-          </>
+          <section>
+            <div style={{ display: "flex", columnGap: 3 }}>
+              <p style={{ fontWeight: "bold" }}>name:</p>
+              <p key={index} className="title">
+                {userName}
+              </p>
+            </div>
+            <div style={{ display: "flex", columnGap: 3 }}>
+              <p style={{ fontWeight: "bold" }}>phone Number:</p>
+              <p>{phoneNumber}</p>
+            </div>
+            <div style={{ display: "flex", columnGap: 3 }}>
+              <p style={{ fontWeight: "bold" }}>Email:</p>
+              <p>{email}</p>
+            </div>
+          </section>
         );
       })}
     </div>
   );
 };
-const Data = [
-  {
-    title: "herry",
-    phoneNunber: "999999",
-    date: "kingherry@gmail.com",
-    time: "12:00 AM",
-  },
-  {
-    title: "herry",
-    phoneNunber: "999999",
-    date: "kingherry@gmail.com",
-    time: "12:00 AM",
-  },
-  {
-    title: "herry",
-    phoneNunber: "999999",
-    date: "kingherry@gmail.com",
-    time: "12:00 AM",
-  },
-  {
-    title: "herry",
-    phoneNunber: "999999",
-    date: "kingherry@gmail.com",
-    time: "12:00 AM",
-  },
-];

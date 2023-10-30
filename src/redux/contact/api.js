@@ -6,5 +6,5 @@ export const getContactsAPI = async () => {
 };
 // Create contact api
 export const createContactAPI = async (payload) => {
-  return mainbaseURL.post("/categories/create", payload);
+  return mainbaseURL.post("/contact/create", payload);
 };
