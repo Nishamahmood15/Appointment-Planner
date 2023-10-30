@@ -1,61 +1,75 @@
+import { Form, Formik } from "formik";
 import React from "react";
+import {
+  CreateContact,
+  getContacts,
+} from "../../redux/contact/contact.actions";
+import { useDispatch } from "react-redux";
 
-export const ContactForm = ({
-  name,
-  setName,
-  phone,
-  setPhone,
-  email,
-  setEmail,
-  handleSubmit
-}) => {
+export const ContactForm = () => {
+  const dispatch = useDispatch();
+  const initialValues = {
+    userName: " ",
+    phoneNumber: " ",
+    email: "",
+  };
+
+  const handleSubmit = (values) => {
+    console.log("vvv", values);
+    dispatch(CreateContact(values));
+    setTimeout(() => {
+      // Make the API call or dispatch an action here
+      dispatch(getContacts());
+    }, 3000);
+  };
   return (
-    <>
-      <form onSubmit={handleSubmit}>
+    <Formik initialValues={initialValues} onSubmit={handleSubmit}>
+      {(formik) => (
+        <Form>
+          <div>
+            <label>
+              <input
+                name="userName"
+                type="text"
+                required
+                placeholder="Contact Name"
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                value={formik.values.userName}
+              />
+            </label>
+            <br />
 
-        <label>
-          <input
-            name="name"
-            type="text"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            required
-            placeholder="Contact Name"
-          />
-        </label>
-        <br />
+            <label>
+              <input
+                name="phoneNumber"
+                type="tel"
+                required
+                placeholder="Phone Number"
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                value={formik.values.phoneNumber}
+              />
+            </label>
+            <br />
 
-        <label>
-          <input
-            name="phone"
-            type="tel"
-            value={phone}
-            onChange={(e) => setPhone(e.target.value)}
-            required
-            placeholder="Phone Number"
-            pattern="^07([\d]{3})[(\D\s)]?[\d]{3}[(\D\s)]?[\d]{3}$"
-          />
-        </label>
-        <br />
+            <label>
+              <input
+                name="email"
+                type="email"
+                required
+                placeholder="Email Address"
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                value={formik.values.email}
+              />
+            </label>
+            <br />
 
-        <label>
-          <input
-            name="email"
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-            placeholder="Email Address"
-          />
-        </label>
-        <br />
-
-        <input
-          type="submit"
-          value="Add Contact"
-        />
-      </form>
-    </>
+            <button type="submit" className="bg-blue-900"> Add Contact</button>
+          </div>
+        </Form>
+      )}
+    </Formik>
   );
 };
-
