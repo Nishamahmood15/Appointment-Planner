@@ -1,16 +1,16 @@
-import { Form, Formik } from "formik";
+// AppointmentForm.jsx
+
 import React from "react";
+import { Form, Formik } from "formik";
 import { useDispatch } from "react-redux";
-import {
-  Createappointment,
-  getappointments,
-} from "../../redux/appointment/appointment.actions";
+import { Createappointment, getappointments } from "../../redux/appointment/appointment.actions";
+
 
 export const AppointmentForm = () => {
   const dispatch = useDispatch();
   const initialValues = {
-    title: " ",
-    contact: " ",
+    title: "",
+    contact: "",
     date: "",
     time: "",
   };
@@ -22,11 +22,12 @@ export const AppointmentForm = () => {
       dispatch(getappointments());
     }, 3000);
   };
+
   return (
     <Formik initialValues={initialValues} onSubmit={handleSubmit}>
       {(formik) => (
-        <Form>
-          <div>
+        <Form className="appointment-form"> {/* Add a class to the form */}
+          <div className="form-group">
             <label htmlFor="title">Title:</label>
             <input
               type="text"
@@ -35,10 +36,11 @@ export const AppointmentForm = () => {
               onBlur={formik.handleBlur}
               value={formik.values.title}
               required
+              className="form-input" 
             />
           </div>
 
-          <div>
+          <div className="form-group">
             <label htmlFor="contact">Contact:</label>
             {/* render contactPicker with contact list */}
             <input
@@ -48,10 +50,11 @@ export const AppointmentForm = () => {
               onBlur={formik.handleBlur}
               value={formik.values.contact}
               required
+              className="form-input"
             />
           </div>
 
-          <div>
+          <div className="form-group">
             <label htmlFor="date">Date:</label>
             <input
               type="date"
@@ -60,10 +63,11 @@ export const AppointmentForm = () => {
               onBlur={formik.handleBlur}
               value={formik.values.date}
               required
+              className="form-input"
             />
           </div>
 
-          <div>
+          <div className="form-group">
             <label htmlFor="time">Time:</label>
             <input
               type="time"
@@ -72,10 +76,11 @@ export const AppointmentForm = () => {
               onBlur={formik.handleBlur}
               value={formik.values.time}
               required
+              className="form-input" 
             />
           </div>
 
-          <button type="submit">Add Appointment</button>
+          <button type="submit" className="submit-button">Add Appointment</button> 
         </Form>
       )}
     </Formik>

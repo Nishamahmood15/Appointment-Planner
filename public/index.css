@@ -1,55 +1,52 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-
-
-
-
-
-
-/* #root {
-  padding: 30px;
-  font-family: "Open Sans", sans-serif;
+/* .navbar {
+  background-color: #f0f0f0;
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
 }
 
-nav > a {
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  color: #000000;
-  margin-right: 30.5px;
-  text-decoration-line: none;
+.nav-link {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 5px;
 }
 
-nav > a.active {
-  text-decoration-line: underline;
+.nav-link:hover {
+  text-decoration: underline;
+  color: #007bff;
+} */
+
+
+
+.contact-form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-nav {
-  padding-bottom: 20px;
-  border-bottom: 1px solid #979797;
+.form-group {
   margin-bottom: 20px;
 }
 
-h2 {
-  font-weight: bold;
-  font-size: 18px;
-  color: #000000;
-  margin: 0;
-  margin-bottom: 18px;
+.form-input {
+  font-family: "Open Sans", sans-serif;
+  background: #ffffff;
+  border: 1px solid #979797;
+  border-radius: 4px;
+  padding: 7px 9.5px 9px 9.5px;
+  outline: none;
+  width: 100%;
+  margin-bottom: 10px;
+  box-sizing: border-box;
 }
 
-section {
-}
-
-hr {
-  border: none;
-  border-top: 1px solid #979797;
-  margin: 20px 0;
-}
-
-input[type="submit"] {
+.submit-button {
   background: #03a8d8;
   border-radius: 4px;
   color: #ffffff;
@@ -64,12 +61,23 @@ input[type="submit"] {
   margin-bottom: 0px;
 }
 
-input[type="submit"] {
-  cursor: pointer;
+
+  .appointment-form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+.form-group {
+  margin-bottom: 20px;
 }
 
-input,
-select {
+.form-input {
+ 
   font-family: "Open Sans", sans-serif;
   background: #ffffff;
   border: 1px solid #979797;
@@ -81,16 +89,18 @@ select {
   box-sizing: border-box;
 }
 
-.tile {
-  margin: 0;
-  font-size: 14px;
-  margin-bottom: 4px;
-}
-
-.tile.tile-title {
+.submit-button {
+ 
+  background: #03a8d8;
+  border-radius: 4px;
+  color: #ffffff;
   font-weight: bold;
+  font-size: 14px;
+  border: none;
+  outline: none;
+  padding: 10px 0;
+  width: 100%;
+  font-family: "Open Sans", sans-serif;
+  margin-top: 10px;
+  margin-bottom: 0px;
 }
-
-.tile-container {
-  margin-bottom: 20px;
-} */
