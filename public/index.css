@@ -1,4 +1,14 @@
-#root {
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+
+
+
+
+/* #root {
   padding: 30px;
   font-family: "Open Sans", sans-serif;
 }
@@ -83,4 +93,4 @@ select {
 
 .tile-container {
   margin-bottom: 20px;
-}
+} */

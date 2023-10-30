@@ -66,7 +66,7 @@ export const ContactForm = () => {
             </label>
             <br />
 
-            <button type="submit"> Add Contact</button>
+            <button type="submit" className="bg-blue-900"> Add Contact</button>
           </div>
         </Form>
       )}
