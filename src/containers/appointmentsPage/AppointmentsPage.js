@@ -12,7 +12,15 @@ export const AppointmentsPage = () => {
   return (
     <div>
       <section>
-        <h2>Add Appointment</h2>
+        <h2
+        style={{
+          fontWeight: 1000,
+          textDecoration: "none",
+          color: "Black",
+          padding: "30px 0px",
+          display: "flex",
+          justifyContent: "center",
+        }}>Add Appointment</h2>
         {/* Rendering appointmentform with props */}
         <AppointmentForm />
       </section>

@@ -7,7 +7,15 @@ export const ContactsPage = () => {
   return (
     <div>
       <section>
-        <h2>Add Contact</h2>
+        <h2
+         style={{
+          fontWeight: 1000,
+          textDecoration: "none",
+          color: "Black",
+          padding: "30px 0px",
+          display: "flex",
+          justifyContent: "center",
+        }}>Add Contact</h2>
 
         <ContactForm />
       </section>

@@ -10,7 +10,7 @@ function Root() {
     <>
       <nav
         style={{
-          backgroundColor: "rgb(238,174,202)",
+          backgroundColor: "#03a8d8",
           padding: "30px 0px",
           display: "flex",
           justifyContent: "center",
@@ -21,9 +21,10 @@ function Root() {
       >
         <NavLink
           style={{
-            fontWeight: 900,
+            fontWeight: 1000,
             textDecoration: "none",
-            color: "black",
+            color: "white",
+          
           }}
           to={ROUTES.CONTACTS}
         >
@@ -31,9 +32,9 @@ function Root() {
         </NavLink>
         <NavLink
           style={{
-            fontWeight: 900,
+            fontWeight: 1000,
             textDecoration: "none",
-            color: "black",
+            color: "white",
           }}
           to={ROUTES.APPOINTMENTS}
         >
