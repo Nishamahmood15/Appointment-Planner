@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import Tile from "../tile/Tile";
+import "./style.css";
 import { useDispatch, useSelector } from "react-redux";
 import { getContacts } from "../../redux/contact/contact.actions";
 export const TileList = ({ data }) => {
@@ -13,13 +13,7 @@ export const TileList = ({ data }) => {
 
   console.log(contact, "alll");
   return (
-    <div
-      style={{
-        display: "grid",
-        gridTemplateColumns: "1fr 1fr 1fr 1fr",
-        rowGap: 40,
-      }}
-    >
+    <div class="tile-campo">
       {contact?.map(({ userName, phoneNumber, email }, index) => {
         return (
           <section>

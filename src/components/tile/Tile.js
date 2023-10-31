@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import "./style.css";
 import { useDispatch, useSelector } from "react-redux";
 import { getappointments } from "../../redux/appointment/appointment.actions";
 export const Tile = () => {
@@ -12,13 +13,7 @@ export const Tile = () => {
 
   console.log(appointmentData, "alllapo");
   return (
-    <div
-      style={{
-        display: "grid",
-        gridTemplateColumns: "1fr 1fr 1fr 1fr",
-        rowGap: 40,
-      }}
-    >
+    <div class="tile-campo" style={{}}>
       {appointmentData?.map(({ title, contact, date, time }, index) => {
         return (
           <section>
@@ -47,12 +42,3 @@ export const Tile = () => {
   );
 };
 export default Tile;
-
-const Data = [
-  { userName: "herry", phoneNunber: "999999", email: "kingherry@gmail.com" },
-  { userName: "herry", phoneNunber: "999999", email: "kingherry@gmail.com" },
-  { userName: "herry", phoneNunber: "999999", email: "kingherry@gmail.com" },
-  { userName: "herry", phoneNunber: "999999", email: "kingherry@gmail.com" },
-  { userName: "herry", phoneNunber: "999999", email: "kingherry@gmail.com" },
-  { userName: "herry", phoneNunber: "999999", email: "kingherry@gmail.com" },
-];

@@ -1,0 +1,16 @@
+.tile-campo {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+@media (max-width: 876px) {
+  .tile-campo {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 30px;
+  }
+}
+@media (max-width: 376px) {
+  .tile-campo {
+    grid-template-columns: 1fr;
+  }
+}
