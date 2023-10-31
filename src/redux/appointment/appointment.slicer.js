@@ -2,7 +2,6 @@ import { createSlice } from "@reduxjs/toolkit";
 import { Createappointment, getappointments } from "./appointment.actions";
 
 const initialState = {
-  //add tags
   isappointmentCreateLoading: false,
   isappointmentCreateLoaded: false,
   isappointmentCreateLoadingFailed: false,
